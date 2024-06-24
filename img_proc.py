@@ -173,17 +173,17 @@ def plot_captions_over_time(captions_csv_path, keywords, save_image_dir, total_f
     plt.close()
 
 ''' Plot probabilites from csv file '''
-name = 'cuff_placement_indices_1_ma'
-probs_csv_path = '../prob_arrays/cuff_placement_tubing_55s.csv'
+name = 'xavier cuff og'
+probs_csv_path = '../prob_arrays/cuff_placement_xavier og.csv'
 captions = ["lower arm", "elbow", "upper arm"]
 #captions = ["tubing facing up", "tubing facing down"]
 #captions = ["wire facing sholder", "wire facing hand"]
-save_image_dir = f'../results/tubing_55s'
-total_frames = 331
-total_duration = 55
-indices=[43, 82, 102, 128, 174, 248]
+save_image_dir = f'../results/xavier_og_cuff'
+total_frames = 132
+total_duration = 65
+indices=[43, 54, 62, 81, 102, 128]
 moving_avg_window=None
-#plot_probs_csv(probs_csv_path, captions, save_image_dir, total_frames, total_duration, name, indices, moving_avg_window=5)
+plot_probs_csv(probs_csv_path, captions, save_image_dir, total_frames, total_duration, name, indices, moving_avg_window=6)
 
 ''' Plot a sequence of frames '''
 frames_dir = '../frames/tubing_55s'
@@ -191,15 +191,15 @@ name = 'cuff_placement_seq'
 #plot_frame_seq(frames_dir, save_image_dir, name, indices, total_duration, total_frames)
 
 ''' Plot captions from csv'''
-path_to_captions = 'captions_tubing_rag_clustering.csv'
-path_to_save_captions = '../results/tubing_55s'
-name = 'rag_clustering_result'
-keywords = [
-        ('cuff on upper arm 2 inches above the elbow', 5),  # Most specific phrase first
-        ('cuff on upper arm', 4),
-        ('cuff on elbow', 3),
-        ('cuff in hand', 2),
-        ('cuff on lower arm', 1)
-    ]
+# path_to_captions = 'captions_tubing_rag_clustering.csv'
+# path_to_save_captions = '../results/tubing_55s'
+# name = 'rag_clustering_result'
+# keywords = [
+#         ('cuff on upper arm 2 inches above the elbow', 5),  # Most specific phrase first
+#         ('cuff on upper arm', 4),
+#         ('cuff on elbow', 3),
+#         ('cuff in hand', 2),
+#         ('cuff on lower arm', 1)
+#     ]
 #print(get_cuff_placement_from_caps('cuff on upper arm 2 inches above the elbow', keywords))
-plot_captions_over_time(path_to_captions, keywords, path_to_save_captions, total_frames, total_duration, name, indices)
+#plot_captions_over_time(path_to_captions, keywords, path_to_save_captions, total_frames, total_duration, name, indices)
